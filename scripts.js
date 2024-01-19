@@ -1,0 +1,3 @@
+function getComputerGuess(guess) {
+    
+}
