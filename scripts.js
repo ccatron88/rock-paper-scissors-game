@@ -5,6 +5,9 @@ let tie;
 let count = 0;
 let playerCount = 0;
 let computerCount = 0;
+const rock = document.querySelector('#rock');
+const paper = document.querySelector('#paper');
+const scissors = document.querySelector('#scissors');
 
 function getComputerChoice() {
     let choice = ""
@@ -58,28 +61,28 @@ function playRound(computerSelection, playerSelection) {
         }
 
 function game() {
-    while (count < 5) {
-        playerSelection = getPlayerChoice();
-        computerSelection = getComputerChoice();
+    // while (count < 5) {
+    //     playerSelection = getPlayerChoice();
+    //     computerSelection = getComputerChoice();
 
-        round = playRound(computerSelection, playerSelection)
+    //     round = playRound(computerSelection, playerSelection)
 
-        if (round == "Tie!") {
-            while (tie == false) {
-                round = playRound(computerSelection, playerSelection)
-                if (round == 'Tie!') {
-                    console.log("We have a tie! Play again!");
-                    computerSelection = getComputerChoice();
-                    playerSelection = getPlayerChoice();
-                } else {
-                    tie = true;
-                }
-            }
-        }
+    //     if (round == "Tie!") {
+    //         while (tie == false) {
+    //             round = playRound(computerSelection, playerSelection)
+    //             if (round == 'Tie!') {
+    //                 console.log("We have a tie! Play again!");
+    //                 computerSelection = getComputerChoice();
+    //                 playerSelection = getPlayerChoice();
+    //             } else {
+    //                 tie = true;
+    //             }
+    //         }
+    //     }
         
-        console.log(round)
-        count++;
-    }
+    //     console.log(round)
+    //     count++;
+    // }
 
     if (playerCount > computerCount) {
         console.log(playerCount)
@@ -89,3 +92,7 @@ function game() {
         console.log("Computer wins the game!");
     }
 }
+
+rock.addEventListener('click', playRound);
+paper.addEventListener('click', playRound);
+scissors.addEventListener('click', playRound);
