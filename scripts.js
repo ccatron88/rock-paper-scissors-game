@@ -7,7 +7,8 @@ let computerCount = 0;
 const rock = document.querySelector('#rock');
 const paper = document.querySelector('#paper');
 const scissors = document.querySelector('#scissors');
-const resultsDiv = document.querySelector('#results')
+const resultsDiv = document.querySelector('#results');
+const countDiv = document.querySelector('#running-count');
 
 function getComputerChoice() {
     let choice = ""
@@ -56,6 +57,9 @@ function playRound(playerSelection, computerSelection) {
     } else if ((playerSelection.toLowerCase() == 'scissors') && (computerSelection == 'scissors')) {
         resultsDiv.innerText = "Tie! Play round again!"
     }
+
+    countDiv.innerText = `Player Count: ${playerCount} | Computer Count: ${computerCount}`
+    resultsDiv.appendChild(countDiv);
 
     if (gameCount >= 5) { 
         if (playerCount > computerCount) {
