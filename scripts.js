@@ -1,7 +1,6 @@
 let playerSelection;
 let computerSelection;
 let round = ""
-let tie;
 let gameCount = 0;
 let playerCount = 0;
 let computerCount = 0;
@@ -25,7 +24,7 @@ function getComputerChoice() {
     return choice;
 }
 
-function playRound(playerSelection, computerSelection = getComputerChoice) {
+function playRound(playerSelection, computerSelection) {
     if ((playerSelection.toLowerCase() == 'rock') && (computerSelection == 'scissors')) {
         playerCount++;
         gameCount++;
@@ -35,7 +34,6 @@ function playRound(playerSelection, computerSelection = getComputerChoice) {
         gameCount++;
         resultsDiv.innerText = "Computer wins round: Paper beats Rock!"
     } else if ((playerSelection.toLowerCase() == 'rock') && (computerSelection == 'rock')) {
-        tie = false;
         resultsDiv.innerText = "Tie! Play round again!"
     } else if ((playerSelection.toLowerCase() == 'paper') && (computerSelection == 'rock')) {
         playerCount++;
@@ -46,7 +44,6 @@ function playRound(playerSelection, computerSelection = getComputerChoice) {
         gameCount++;
         resultsDiv.innerText = "Computer wins round: Scissors beats Paper!"
     } else if ((playerSelection.toLowerCase() == 'paper') && (computerSelection == 'paper')) {
-        tie = false;
         resultsDiv.innerText = "Tie! Play round again!"
     } else if ((playerSelection.toLowerCase() == 'scissors') && (computerSelection == 'paper')) {
         playerCount++;
@@ -57,7 +54,6 @@ function playRound(playerSelection, computerSelection = getComputerChoice) {
         gameCount++;
         resultsDiv.innerText = "Computer wins round: Rock beats Scissors!"
     } else if ((playerSelection.toLowerCase() == 'scissors') && (computerSelection == 'scissors')) {
-        tie = false;
         resultsDiv.innerText = "Tie! Play round again!"
     }
 
@@ -83,18 +79,15 @@ function playRound(playerSelection, computerSelection = getComputerChoice) {
 rock.addEventListener('click', () => {
     let computerChoice = getComputerChoice();
     let playerChoice = 'rock';
-    // game(playerChoice, computerChoice);
     playRound(playerChoice, computerChoice);
 });
 paper.addEventListener('click', () => {
     let computerChoice = getComputerChoice();
     let playerChoice = 'paper';
-    // game(playerChoice, computerChoice);
     playRound(playerChoice, computerChoice);
 });
 scissors.addEventListener('click', () => {
     let computerChoice = getComputerChoice();
     let playerChoice = 'scissors';
-    // game(playerChoice, computerChoice);
     playRound(playerChoice, computerChoice);
 });
