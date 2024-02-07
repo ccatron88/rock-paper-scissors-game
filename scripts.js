@@ -25,11 +25,6 @@ function getComputerChoice() {
     return choice;
 }
 
-// function getPlayerChoice() {
-//     let playerChoice = prompt("Enter your choice (Rock, paper, or scissors): ");
-//     return playerChoice;
-// }
-
 function playRound(playerSelection, computerSelection = getComputerChoice) {
     if ((playerSelection.toLowerCase() == 'rock') && (computerSelection == 'scissors')) {
         playerCount++;
@@ -83,63 +78,6 @@ function playRound(playerSelection, computerSelection = getComputerChoice) {
         resetBtn.innerText = 'Reset';
         resultsDiv.appendChild(resetBtn).addEventListener('click', () => window.location.reload());
     }
-}
-
-function game(playerChoice, computerChoice) {
-    // while (count < 5) {
-    //     playerSelection = getPlayerChoice();
-    //     computerSelection = getComputerChoice();
-
-    //     round = playRound(computerSelection, playerSelection)
-
-    //     if (round == "Tie!") {
-    //         while (tie == false) {
-    //             round = playRound(computerSelection, playerSelection)
-    //             if (round == 'Tie!') {
-    //                 // console.log("We have a tie! Play again!");
-    //                 let output = document.createElement('p');
-    //                 output.innerText = "We have a tie! Play again!";
-    //                 resultsDiv.appendChild(output);
-    //                 computerSelection = getComputerChoice();
-    //                 playerSelection = getPlayerChoice();
-    //             } else {
-    //                 tie = true;
-    //             }
-    //         }
-    //     }
-        
-    //     // console.log(round)
-    //     let playedRound = document.createElement('p');
-    //     playedRound.innerText = round;
-    //     resultsDiv.appendChild(playedRound);
-    //     count++;
-    // }
-
-    // if (playerCount > computerCount) {
-    //     // console.log(playerCount)
-    //     // console.log("Player wins the game!");
-    //     let playerWin = document.createElement('p');
-    //     playerWin.innerText = playerCount;
-    //     resultsDiv.appendChild(playerWin);
-
-    // } else {
-    //     // console.log(computerCount)
-    //     // console.log("Computer wins the game!");
-    //     let computerWin = document.createElement('p');
-    //     computerWin.innerText = computerCount;
-    //     resultsDiv.appendChild(computerWin);
-    // }
-    // if (gameCount < 5) {
-    //     playRound(playerChoice, computerChoice)
-    // } else if (playerCount > computerCount) {
-    //     let playerWin = document.createElement('p');
-    //     playerWin.innerText = `Player wins! Player Count: ${playerCount} | Computer Count: ${computerCount}`;
-    //     resultsDiv.appendChild(playerWin);
-    // } else {
-    //     let computerWin = document.createElement('p');
-    //     computerWin.innerText = `Computer wins! Computer Count: ${computerCount} | Player Count: ${playerCount}`;
-    //     resultsDiv.appendChild(computerWin);
-    // }
 }
 
 rock.addEventListener('click', () => {
